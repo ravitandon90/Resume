@@ -1,0 +1,239 @@
+\documentclass{article}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[colorlinks = true,
+            linkcolor = blue,
+            urlcolor  = blue,
+            citecolor = blue,
+            anchorcolor = blue]{hyperref}
+\textheight=11in
+\pagestyle{empty}
+\hypersetup{
+    pdfborder={0 0 0},
+}
+\raggedright
+\newcommand{\sbt}{\,\begin{picture}(-1,1)(-1,-3)\circle*{2}\end{picture}\ }
+\newcommand{\area}[2]{\vspace*{-8pt} \begin{verse}\textbf{#1}   #2 \end{verse} \vspace*{-4pt} }
+\newcommand{\lineunder}{\vspace*{-8pt} \\ \hspace*{-18pt} \hrulefill \\}
+\newcommand{\header}[1]{{\hspace*{-15pt}\vspace*{6pt} \textsc{#1}} \vspace*{-6pt} \lineunder}
+\newcommand{\employer}[3]{{ \textbf{#1} \hfill #2\\ {{\emph{#3}}}\\  }}
+\newcommand{\project}[2]{{ \textbf{#1} \hfill #2\\  }}
+\newcommand{\contact}[3]{
+\vspace*{-18pt}
+\begin{center}
+{\LARGE \scshape {#1}}\\
+#2 \\
+#3
+\end{center}
+\vspace*{-8pt}
+}
+\newenvironment{achievements}{\begin{list}{$\sbt$}{\topsep -2pt \itemsep -2pt}}{\vspace*{0pt}\end{list}}
+\newcommand{\schoolwithcourses}[5]{
+ \textbf{#1} $\sbt$ #2 \hfill #3\\ 
+\textit{#4} #5\\
+\vspace*{1pt}
+}
+\newcommand{\school}[4]{
+ \textbf{#1} #2 $\sbt$ #3\\ 
+#4 \\
+}
+% END RESUME DEFINITIONS
+
+\begin{document}
+
+\small
+\smallskip
+\vspace*{-44pt}
+
+\contact{Ravi Tandon}
+{220 B Marshall Ave, Princeton, NJ 08540}
+{(+1) 609-558-1561 $\sbt$ tandon@princeton.edu  $\sbt$ \href{http://www.cs.princeton.edu/~tandon}{http://www.cs.princeton.edu/~tandon}}
+
+\header{Education}
+\schoolwithcourses{Princeton University}{Princeton, USA}{September 2013 - May 2015 (Expected)}
+{\textit{MSE}. Computer Science And Engineering}{}{\textit{Master's Thesis: Faster garbage collectors for hybrid memories}}
+
+\schoolwithcourses{Indian Institute of Technology Guwahati}{Guwahati, India}{July 2008 - May 2012}
+{Bachelors of Technology. Computer Science And Engineering}{}{\textit{Bachelor's Thesis: Recovery Protocols For Flash File Systems}}
+
+%\schoolwithcourses{Red Rose Senior Secondary School}{Lucknow, India}{July 2006 - April 2008}
+%{Senior Secondary}{$\sbt$ Marks: 90\%}
+%\schoolwithcourses{Montfort Inter College}{Lucknow, India}{May 2006}
+%{High School}{$\sbt$ Marks: 84\%}
+
+\header{Research Interests}
+\begin{achievements}
+ \item Operating Systems (\textit{Memory Management})
+ \item Storage 
+ \item Distributed Systems
+\end{achievements}
+
+\header{Publications}
+\begin{achievements}
+ \item \href{}{\textit{Faster garbage collectors for hybrid memories}}.\newline {\emph{Ravi Tandon, Andrew Appel}}, {\bf{\emph{In Submission to International Symposium on Memory Management (ISMM) 2015}}}.
+\item \href{http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6465561&tag=1}{\textit{CRP: Cluster Head Reelection Protocol for heterogeneous Wireless Sensor Networks}}.\newline {\emph{Ravi Tandon, Sukumar Nandi}}, {\bf{\emph{The Fifth International Conference On Communication Systems And Networks: Cosmnets 2013}}}.
+\item \href{http://link.springer.com/chapter/10.1007\%2F978-3-642-36071-8_41#page-1}{\textit{Recovery Protocols For Flash File Systems}}.\newline {\emph{Ravi Tandon, Gautam Barua}}, {\bf{\emph{The 9th International Conference on Distributed Computing and Internet Technologies (ICDCIT 2013)}}}.
+\item \href{https://docs.google.com/file/d/0B6dV4oJpL8T8RFJXVllfd2Q0alk/edit}{\textit{Adaptive Lagrangean Clustering Protocol}} \newline{\emph{Ravi Tandon, Biswanath Dey, Sukumar Nandi}}, {\bf{\emph{accepted in The Second IEEE International Conference on Parallel, Distributed And Grid Computing(PDGC-2012)}}}
+\end{achievements}
+
+
+\header{Work Experience}
+\employer{Human Computer Interaction: Ubiquitous Computing}{Summer 2011}{University of New Hampshire, USA, Research Intern, Advisor: Prof. Andrew L. Kun}
+	\begin{achievements}
+	\item Designed innovative interfaces using common objects for interacting with a Microsoft Surface..
+	\item Built applications for efficient data visualization and integration of Matlab with Microsoft Surface APIs.
+	\item Performed user study and analysis of interfaces developed using eye-tracking, heart rate monitoring and NASA-TLX (subjective workload assessment tool).
+	\end{achievements}
+
+\employer{Human Computer Interaction: Multi-Modal Interface Design}{Summer 2010}{ Adobe Advanced Technology Labs, India, Research Intern, Advisor: Dr. Shriram Revankar}
+	\begin{achievements}
+	\item Developed a generic interface for unifying multiple modalities of interacting with applications.
+	\item Worked with Android APIs. Combined touch and speech into a single gesture.
+	\end{achievements}
+	
+\header{Projects}
+\project{Operating Systems: Faster garbage collectors for hybrid memories}{June 2013 - Present}
+	\begin{achievements}
+		\item Redesigned garbage collection for applications running on non-volatile memories (flash drives)
+		\item Introduced \textit{"Core-Aware Garbage Collection"} in order reduce accesses to flash drives
+		\item Quantify improvements in application throughput and I/Os to flash drive through experiments \newline 
+		\href{https://github.com/PrincetonUniversity/NVJVM}{(Code)}
+		
+	\end{achievements}
+\vspace{3mm}
+\project{Operating Systems: Tracer: Monitoring Fine Grained Memory Access Patterns}{Fall 2013}
+	\begin{achievements}
+		\item Designed \textit{"Tracer"} a tool to monitor access patterns at object level granularity
+		\item Quantify overheads over native C code and improvements over a page-protection mechanism \newline
+		 \href{https://drive.google.com/file/d/0B6dV4oJpL8T8czdNNGhLSWhFQWM/view?usp=sharing}{(Report)}
+		 \href{https://github.com/ravifreek63/memory_manager}{(Code)}
+		
+	\end{achievements}
+\vspace{3mm}	
+\project{Big Data: What can go wrong with in-memory computation frameworks}{Spring 2014}
+	\begin{achievements}
+		\item Analyzed the effects of memory pressure on big data applications running on \textit{Spark runtime}
+		\item Quantified access patterns at the granularity of objects
+		\item Extended RDDs to index data based on a range partitioning technique to significantly reduce query time \newline
+		 \href{https://drive.google.com/file/d/0B6dV4oJpL8T8SHdCUF9aSGdPNU0/view?usp=sharing}{(Report)}
+		 \href{https://github.com/ravifreek63/memoSpark}{(Code)}		 
+	\end{achievements}
+\vspace{3mm}	
+
+\project{Wireless Sensor Networks: Lagrangean Clustering Protocol}{}
+	\begin{achievements}
+	\item Developed an energy efficient clustering scheme using Lagrangean Clustering for cluster formation.  
+	\item Proposed {\bf{\emph{Adaptive Lagrangean Clustering Scheme (ALCP)}}} for homogeneous networks and {\bf{\emph {Distributed Lagrangean Clustering Scheme (DLCP)}}} for heterogeneous networks.\newline
+	\href{http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6449798}{(Paper)} \href{http://www.academia.edu/2320068/Distributed_Lagrangean_Clustering_Protocol_for_heterogeneous_sensor_networks}{(Paper)}
+	%\item ALCP was accepted in {\bf{\emph{The Second IEEE International Conference on Parallel, Distributed And Grid Computing (PDGC-2012)}}}. 
+	%\item DLCP was accepted in {\bf{\emph{The 14th International Conference on Distributed Computing and Networking (ICDCN 2013)}}}
+	\end{achievements}
+\vspace{2mm}		
+
+\project{Wireless Sensor Networks: Sensor Network Model}{}
+	\begin{achievements}
+	\item  Developed a theoretical model for determination of optimal number of cluster heads in sensor networks. This model is called {\bf{\emph{Unequal Probability Election Model (UEPEM)}}}. 
+	\item  Developed a protocol {\bf{\emph{Optimal Cluster Election Protocol (OCEP)}}} based on the model proposed in \textit{UEPEM}. Comparison with existing protocols such as CODA and LEACH was done. Results showed \textit{OCEP} outperforms existing clustering approaches.
+	%\item Determination of Optimal Number of Cluster Heads in Wireless Sensor Networks was published in {\bf{\emph{International Journal on Computer Networks and Communications, (vol. 4, no. 4)}}}.
+	\href{http://arxiv.org/pdf/1208.1982.pdf}{(Paper)}
+	\end{achievements}
+\vspace{3mm}	
+\newpage
+
+\project{Wireless Sensor Networks: Weight Based Clustering}{}
+	\begin{achievements}
+	\item  Proposed a clustering protocol that assigns weights to sensor nodes based on their residual energy. Simulation studies showed that this clustering approach ({\bf{\emph{Weight Based Clustering for Heterogeneous Sensor Networks}}}) improves energy efficiency over similar approaches (such as \textit{HEED} and \textit{GC}).
+	\href{http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6488034}{(Paper)}
+	\end{achievements}
+\vspace{3mm}	
+\project{Wireless Sensor Networks: Cluster Head Reelection Protocol}{}
+	\begin{achievements}
+	\item  Proposed a clustering approach that elects cluster heads in two different phases. The novelty is in cluster reorganization to ensure that the sensor node with the highest residual energy becomes a cluster head.
+	\item Simulation of SEP, LEACH and FAIR was done. Comparison with existing protocols showed that CRP elects cluster heads in a better manner and prolongs the lifetime of sensor network.
+	\href{http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6465561}{(Paper)}
+	\end{achievements}
+\vspace{3mm}	
+
+\project{File Systems: Recovery Protocols For Flash File Systems}{Fall 2011 - Spring 2012}
+	\begin{achievements}
+%	\item Literature survey on existing protocols that support transactions in traditional file systems. Study of log-structured file systems.  
+	\item Designed protocols that recover file system state from a system crash or a user transaction abort.
+	\item Implementation of protocols on an open source flash file system (\href{http://www.yaffs.net/}{\bf{\emph{YAFFS}}}) and integration of \href{http://dl.acm.org/citation.cfm?id=1851276.1851285}{transactional file system} with YAFFS was done.
+	\href{https://github.com/ravifreek63/YAFFS_repo}{(Code)}
+	\href{http://link.springer.com/chapter/10.1007\%2F978-3-642-36071-8_41#page-1}{(Paper)}
+	\end{achievements}
+\vspace{3mm}  
+
+\project{File Systems: Online Backup and Versioning In Log Structured File Systems}{Fall 2011 - Spring 2012}
+	\begin{achievements}
+	 \item Proposed an online backup approach that circumvents user transaction aborts due to the backup process for log-structured file systems. 
+	 \item Defined "Conflict Dependence" that helps identify conflicts within backup and user transactions and propose an implementation within a log-structured file system (LFS) that does not require aborts.
+	 %\item Further extend the scheme to a versioning system in a LFS.
+	 %\item  Online backup and versioning in log-structured file systems was accepted in {\bf{\emph{Student Research Symposium IEEE International Conference on High Performance Computing (HiPC 2012)}}} 
+	 \href{http://www.academia.edu/2085652/Online_backup_and_versioning_in_log_structured_file_systems}{(Paper)}
+	\end{achievements}
+\vspace{3mm} 
+
+\project{Operating Systems: Design Improvements In Pint Operating System}{Fall 2010}
+	\begin{achievements}
+	 \item Thread Management - Provided synchronization support to the threads. Implemented a thread scheduler.
+	 \item User Programs - Enabled user programs to interact with the OS via system calls.
+	 \item Virtual Memory - Provided user programs support of an extended virtual memory. It required study of page table, the supplemental page table, the swap table implementation, management of memory mapped files and management of the frame table.
+	\item File Systems - Provided support for extensible files, implemented buffer cache, subdirectories and system calls that read and write to a directory.
+	\end{achievements}
+\vspace{3mm} 
+
+\project{Information Retrieval: An analysis of approximate page ranking}{Fall 2013}
+\begin{achievements}
+	\item Redesigned page ranking to reduce computation by filtering stable nodes
+	\item Implementation and experimentation showed that the overall runtime can be improved by 27\% for approximate results
+	\href{https://drive.google.com/file/d/0B6dV4oJpL8T8c3VFaVlBNjc1UUE/view?usp=sharing}{(Report)}
+	\href{https://github.com/ravifreek63/memoSpark}{(Code)}
+\end{achievements}
+\vspace{3mm}
+\project{Computer Architecture: 4-bit CPU Design}{Fall 2009}
+	\begin{achievements}
+	 \item Designed control logic for a 4-bit Microprocessor with an ALU, Register Set and 256 X 4 bit RAM based on Micro programmed Control, 4 bit data bus, 8 bit address bus. Implemented 16 Arithmetic, Logic and Procedure Call instructions.
+	\end{achievements}
+\vspace{3mm} 
+
+\project{Network Application: HTTP Proxy Server}{Spring 2012}
+	\begin{achievements}
+	 \item Implemented concurrency in proxy server with thread safety, caching of objects based on different caching policies, DNS based load balancing
+	\end{achievements}
+\vspace{3mm} 
+
+%\project{Network Application: Relay Chat Client}{Spring 2011}
+%	\begin{achievements}
+%	 \item Designed control logic for a 4-bit Microprocessor with an ALU, Register Set and 256 X 4 bit RAM based on Micro programmed Control, 4 bit data bus, 8 bit address bus. Implemented 16 Arithmetic, Logic and Procedure Call instructions.
+%	\end{achievements}
+\vspace{3mm} 
+
+\project{Other Projects}{2008-2010}
+	\begin{achievements}
+	\item Designed and implemented an LL Parser and a SLR Parser for a subset of the C language.
+	\item Designed and implemented an assembler and a loader for assembly level instructions of a subset of x86 architecture.
+	\item Devised a stock predictor using Batch and Stochastic Gradient Descent.
+	\item Designed a web portal for storing and searching academic documents.
+	\end{achievements}
+\vspace{3mm} 
+%\header{Term Papers}
+%	\begin{achievements}
+%	 \item {\bf{\emph{Analysis of Distributed Clustering Protocols}}}:\newline Analyzed different protocols for clustering wireless sensor networks in an energy efficient manner. Proposed a distributed protocol (Adaptive Lagrangean Clustering Protocol) for homogeneous sensor networks. Performed preliminary simulations.
+%	 \item {\bf{\emph{Dynamic Content Caching}}}:\newline Surveyed various caching techniques that have deployed on the World Wide Web. Besides, three different architectures for dynamic content caching have been analyzed. Also problems associated with them and their prospective solutions have been discussed.	 
+%	\end{achievements}
+
+\header{Awards and Achievements}
+\begin{achievements}
+ \item \textit{Princeton University Graduate Fellowship}, 2013
+ \item Qualified state level of NATIONAL TALENT SEARCH EXAMINATION (62$\%$)
+ \item Secured AIR 649 in 4th NCO (National Cyber Olympiad) , AIR 522 5th NCO (National Cyber Olympiad) , and AIR 833 in 6th NSO (National Science Olympiad)
+\end{achievements}
+\vspace{3mm} 
+\header{Homepage}
+\begin{centering} 
+ \url{http://www.cs.princeton.edu/~tandon}
+\end{centering}
+
+\end{document}
